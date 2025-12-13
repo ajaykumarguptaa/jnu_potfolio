@@ -1,0 +1,74 @@
+  -- CREATE DATABASE lab_project_db
+  -- USE lab_project_db;
+
+  -- -- ================= ADMIN =================
+  -- CREATE TABLE admin (
+  --   admin_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   admin_user_name VARCHAR(255),
+  --   admin_email VARCHAR(255),
+  --   admin_password VARCHAR(255)
+  -- );
+
+  -- -- ================= EVENT =================
+  -- CREATE TABLE event (
+  --   event_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   event_title VARCHAR(255),
+  --   event_description TEXT,
+  --   event_vanue VARCHAR(255),
+  --   event_date DATE,
+  --   event_time TIME,
+  --   admin_id INT,
+  --   FOREIGN KEY (admin_id) REFERENCES admin(admin_id) ON DELETE CASCADE
+  -- );
+
+  -- -- ================= PROJECT =================
+  -- CREATE TABLE project (
+  --   project_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   project_title VARCHAR(255),
+  --   organization VARCHAR(255),
+  --   description TEXT,
+  --   project_date DATE,
+  --   admin_id INT,
+  --   FOREIGN KEY (admin_id) REFERENCES admin(admin_id) ON DELETE CASCADE
+  -- );
+
+  -- -- ================= RESEARCH WORK =================
+  -- CREATE TABLE research_work (
+  --   research_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   research_title VARCHAR(255),
+  --   field VARCHAR(255),
+  --   descripton TEXT,
+  --   admin_id INT,
+  --   FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
+  -- );
+
+  -- -- ================= MEMBERS =================
+  -- CREATE TABLE members (
+  --   member_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   member_name VARCHAR(255),
+  --   role VARCHAR(255),
+  --   profile_picture VARCHAR(255),
+  --   description TEXT,
+  --   admin_id INT,
+  --   FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
+  -- );
+
+  -- -- ================= FORGET PASS =================
+  -- CREATE TABLE forget_pass (
+  --   reset_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   token VARCHAR(255),
+  --   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  --   admin_id INT,
+  --   FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
+  -- );
+
+  -- -- ================= MEMBER EXPERIENCE =================
+  -- CREATE TABLE member_experience (
+  --   exp_id INT AUTO_INCREMENT PRIMARY KEY,
+  --   company_name VARCHAR(255),
+  --   position VARCHAR(255),
+  --   start_date DATE,
+  --   end_date DATE,
+  --   member_id INT,
+  --   FOREIGN KEY (member_id) REFERENCES members(member_id)
+  -- );

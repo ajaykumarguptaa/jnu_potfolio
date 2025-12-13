@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Prevent horizontal overflow from sliders */
+body,
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

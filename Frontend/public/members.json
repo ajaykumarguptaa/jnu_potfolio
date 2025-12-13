@@ -1,0 +1,475 @@
+{
+  "currentMembers": [
+    {
+      "id": 1,
+      "name": "Mr. Kapil Dev",
+      "role": "PhD Scholar",
+      "about": "Hello! I'm Kapil Dev, a dedicated Ph.D. researcher at the School of Computer and Systems Sciences, Jawaharlal Nehru University (JNU), New Delhi. Currently pursuing advanced research in Computer Science, I am passionate about cutting-edge technologies, theoretical foundations, and real-world applications that solve meaningful problems.\n My academic journey reflects a strong commitment to knowledge, innovation, and ethical research practices. I believe in bridging the gap between theoretical computer science and its transformative impact on society.",
+      "image": "Mr. Kapil Dev.jpg",
+      "education": "Ph.D. in Computer Science \n Jawaharlal Nehru University (JNU) \n New Delhi 📚 Field: Computer and Systems Sciences (SCS)",
+      "interests": [
+        "Machine Learning & Deep Learning\nComputational Theory\nArtificial Intelligence\nSystems and Network Security \n Data Analysis and Modelling\nIoT and Smart Systems Integration"
+      ],
+      "contact": {
+        "address": "Hostel, Jawaharlal Nehru University, New Delhi - 110067",
+        "mobile": "9651534397",
+        "email": "kapildev@gmail.com",
+        "Linkedin": "linkedin.com/in/kapildev-807063170",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "research Work": "Currently enrolled in the Monsoon 2025 semester and actively working on my doctoral thesis under the guidance of my advisor Dr. Saurabh Kumar Sharma. My research focuses on emerging trends in computational intelligence and their scalable applications in real-time environments."
+    },
+    {
+      "id": 2,
+      "name": "Ms. Anupma Gadhwal",
+      "role": "PhD Scholar",
+      "about": "Hello! I’m Anupma Gadhwal, a passionate and curious data science enthusiast currently pursuing my M.Tech in Data Science at Jawaharlal Nehru University, New Delhi. With a strong academic foundation in Computer Science & Engineering and hands-on experience in machine learning, deep learning, IoT, and full-stack development, I aim to build data-driven solutions that create real-world impact.",
+      "image": "Ms. Anupma Gadhwal.jpg",
+      "education": "Pursuing P.hD Computer Science, JNU \n  M.Tech in Data Science Jawaharlal Nehru University, New Delhi \n B.Tech in Computer Science & Engineering BVCOE, GGSIPU New Delhi \n Diploma in Computer Science & Engineering SBTE, Patna",
+      "interests": [],
+      "contact": {
+        "address": "Delhi",
+        "mobile": "+91-9876543210",
+        "email": "anupmagadhwal@gmail.com",
+        "Linkedin": "linkedin.com/in/anupma-gadhwal-807063170",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "researchWork": "Age and Gender Prediction Built a CNN model to classify age and gender from images.Published in International Conference on Computing, Communication and Cyber Security \n Weather Monitoring System IoT-based system integrated with cloud computing for real-time climate tracking.Published in International Journal of Advanced Science and Technology \n Music Generation using LSTM Leveraged deep learning to generate musical compositions using recurrent neural networks.\n Stock Market Analysis Time-series analysis using VAR (Vector Auto Regression) to understand market trends.\n Achievements : Smart India Hackathon Finalist (2019) Represented at the national finale for innovative problem-solving using technology."
+    },
+    {
+      "id": 3,
+      "name": "Mr. Saurabh Kumar",
+      "role": "PhD Scholar",
+      "about": "About information coming soon",
+      "image": "Mr. Saurabh Kumar.jpg",
+      "education": "Pursuing P.hD Computer Science, JNU \n  M.Tech,CS&T \nM.Sc , IT Mu Bodhgaya",
+      "interests": [
+        "Machine Learning",
+        "Big Data"
+      ],
+      "contact": {
+        "address": "Delhi",
+        "mobile": "+91-95079 50788",
+        "email": "saurab14_scs@jnu.ac.in",
+        "Linkedin": "linkedin.com/in/saurabhcsjnu",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "researchWork": "Focus on distributed learning systems."
+    },
+    {
+      "id": 4,
+      "name": "Mrs. Pooja Tiwari",
+      "role": "PhD Scholar",
+      "about": "About information coming soon",
+      "image": "Mrs. Pooja Tiwari.jpg",
+      "education": "Ph.D. in Bioinformatics, JNU",
+      "interests": [
+        "Genomics",
+        "Data Mining"
+      ],
+      "contact": {
+        "address": "Delhi",
+        "mobile": "+91-",
+        "email": "pooja@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "researchWork": "Studying genomic pattern discovery using AI."
+    },
+    {
+      "id": 5,
+      "name": "Mr. Anil Kumar",
+      "role": "PhD Scholar",
+      "about": "About information coming soon",
+      "image": "Mr. Anil Kumar.jpg",
+      "education": "Ph.D. in Computer Science, JNU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "researchWork": "AI interpretability in biomedical applications."
+    }
+  ],
+  "alumni": [
+    {
+      "id": 1,
+      "name": "Dr. Muniraj Gupta",
+      "role": "Alumnus",
+      "about": "Dr. Muniraj Gupta is a passionate to Research in field of Machine Learning, currently Working as a Assistant Professor at University of Delhi. He completed his PhD Computer Science  at Jawaharlal Nehru University, New Delhi. With a strong academic foundation in Computer Science & Engineering and hands-on experience in machine learning, deep learning.",
+      "image": "Dr. Muniraj Gupta.jpg",
+      "education": "P.hD Computer Science, JNU\nM.Tech in Computer Science \nNSUT, New Delhi\nB.Tech in Computer Science & Engineering\nNSUT,  New Delhi",
+      "researchWork": "Machine Learning Stocastics Model\nBuilt a CNN model to classify age and gender from images.\nAchievements:Smart India Hackathon Finalist (2019)\nRepresented at the national finale for innovative problem-solving using technology.",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": " ",
+        "email": "munirajgupta@gmail.com",
+        "Linkedin": "linkedin.com/in/muniraj-gupta-a9a62714b",
+        "GitHub": "",
+        "Google_Scholar": "https://scholar.google.com/citations?user=CuMDDuUAAAAJ&hl=en&authuser=1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dr. Naveen Kumar Singh",
+      "role": "Alumnus",
+      "about": "PhD Computer Science, JNU. MCA, JNU",
+      "image": "Dr. Naveen Kumar Singh.jpg",
+      "education": "PhD Computer Science, JNU.\n MCA, JNU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": " ",
+        "email": "Naveenkumar@gmail.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": " "
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ms. Goldy Pandey",
+      "role": "Alumnus",
+      "about": "Ms. Goldy Pandey is a passionate educator and researcher in the field of Computer Science, currently pursuing a Ph.D. in Computer Science from Jawaharlal Nehru University (JNU), New Delhi. She hold an M.Tech in Computer Science and Technology from JNU, and a B.Tech in Computer Science and Engineering from NCE, a Bihar State Government Engineering College. Additionally, she has completed a Diploma (Polytechnic) in Computer Science and Engineering from SBTE, Patna. She has qualified the UGC-NET examination twice in the field of Computer Science and Applications. With two years of teaching experience as a lecturer in a State Government College (appointed through the Bihar Public Service Commission, BPSC), She bring both academic rigor and classroom experience to her courses. Her core areas of interest include data analytics, machine learning, and programming. She is dedicated to simplifying complex technical concepts and helping learners build a strong foundation in data analytics through structured and practical teaching",
+      "image": "Ms. Goldy Pandey.jpg",
+      "education": "PhD Computer Science, JNU. M.Tech CS&T, JNU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-",
+        "email": "Goldypanday@email.com",
+        "Linkedin": "linkedin.com/in/goldy-pandey-68142314b",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ms. Mankirat Kaur",
+      "role": "Alumnus",
+      "about": "Ms. Mankirat Kaur is a passionate educator and researcher in the field of Computer Science, currently working as an Assistant professor at GTBIT, New Delhi. She hold an M.Tech in Computer Science and Technology from JNU, and a B.Tech in Computer Science and Engineering from GTBIT. She has qualified the UGC-NET examination in the field of Computer Science and Applications. Her core areas of interest include Bio Computation and machine learning. ",
+      "image": "Ms. Mankirat Kaur.jpg",
+      "education": "M.Tech Computer Science & Technology, JNU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 5,
+      "name": "Mr. Jamaluddin",
+      "role": "Alumnus",
+      "about": "Mr. Jamaluddin is a passionate researcher in the field of Computer Science, currently pursuing PhD in Computer Science at AMU, Aligarh. He hold an M.Tech in Computer Science and Technology from JNU, and a MCA & BSc in Computer Science from AMU. He has qualified the GATE in Computer Science and Applications. His core areas of interest include bio computation, deep learning and indian languages.",
+      "image": "Mr. Jamaluddin.jpg",
+      "education": "PhD(CS) at AMU, Aligarh. M.Tech(CS) JNU. MCA & BSc(CS) from AMU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91- ",
+        "email": "jamaluddin@email.com",
+        "Linkedin": "linkedin.com/in/jamall",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 6,
+      "name": "Mr. Tirandij Pradhan",
+      "role": "Alumnus",
+      "about": "Mr. Tirandij Pradhan is a passionate researcher in the field of Computer Science, currently pursuing PhD in Computer Science at AMU, Aligarh. He hold an M.Tech in Computer Science and Technology from JNU, and a MCA & BSc in Computer Science from AMU. He has qualified the GATE in Computer Science and Applications. His core areas of interest include bio computation, deep learning and indian languages.",
+      "image": "Mr. Tirandij Pradhan.jpg",
+      "education": "PhD(CS) at AMU, Aligarh. M.Tech(CS) JNU. MCA & BSc(CS) from AMU",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91- ",
+        "email": "tiranjit@email.com",
+        "Linkedin": "linkedin.com/in/tirandij-pradhan",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 7,
+      "name": "Mr. Raja Babu",
+      "role": "Alumnus",
+      "about": "About information coming soon",
+      "image": "Mr. Raja Babu.jpg",
+      "education": "",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 8,
+      "name": "Mr. Gulam Mazid",
+      "role": "Alumnus",
+      "about": "About information coming soon",
+      "image": "Mr. Gulam Mazid.jpg",
+      "education": "",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91- ",
+        "email": "mazid@email.com",
+        "Linkedin": "linkedin.com/in/gulammazid",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 9,
+      "name": "Mr. Saquib Warsi",
+      "role": "Alumnus",
+      "about": "About information coming soon",
+      "image": "Mr. Saquib Warsi.jpg",
+      "education": "",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91- ",
+        "email": "saquib@email.com",
+        "Linkedin": "linkedin.com/in/saquib-warsi-707saquib786",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 10,
+      "name": "Mr. Sayantan Das",
+      "role": "Research Associate",
+      "about": "About information coming soon",
+      "image": "Mr. Sayantan Das.jpg",
+      "education": "M.Tech in Computer Science, JNU",
+      "interests": [
+        "Systems Programming",
+        "Cybersecurity"
+      ],
+      "contact": {
+        "address": "Kolkata",
+        "mobile": "+91- ",
+        "email": "sayantan@email.com",
+        "Linkedin": "linkedin.com/in/das-sayantan",
+        "GitHub": "",
+        "Google Scholar": ""
+      },
+      "researchWork": "System security in high-performance computing."
+    },
+    {
+      "id": 11,
+      "name": "Mr. Mritunjay Raj",
+      "role": "Alumnus",
+      "about": "About information coming soon",
+      "image": "Mr. Mritunjay Raj.jpg",
+      "education": "",
+      "interests": [
+        "Data Science",
+        "AI Ethics"
+      ],
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91- ",
+        "email": "mritunjayl@email.com",
+        "Linkedin": "linkedin.com/in/mritunjay-raj-4a5932132",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    }
+  ],
+  "interns": [
+    {
+      "id": 1,
+      "name": "Ms. Shivangi",
+      "role": "Intern",
+      "about": "About information coming soon",
+      "image": "Ms. Shivangi.png",
+      "education": "",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ms. Priyanka",
+      "role": "Intern",
+      "about": "BTech in Computer Science",
+      "image": "Ms. Priyanka.png",
+      "education": "",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mr. Ajay Gupta",
+      "role": "Intern",
+      "about": "BCA(AI) from LLDIMS",
+      "image": "Mr. Ajay Gupta.jpg",
+      "education": "BCA From LLDIMS",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9792580616",
+        "email": "theincredibleknowledge+linledin@gmail.com",
+        "Linkedin": "linkedin.com/in/ajay-kumar-gupta-1ab4a9291",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ms. Shruti",
+      "role": "Intern",
+      "about": "BCA(AI) from LLDIMS",
+      "image": "Ms. Shruti.jpg",
+      "education": "BCA From LLDIMS",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-8756955450",
+        "email": "shrutikashyap2709@gmail.com",
+        "Linkedin": "linkedin.com/in/shruti-pateriya-308024274",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 5,
+      "name": "Mr. Pushpendra Pal",
+      "role": "Intern",
+      "about": "BAC(AI) from LLDIMS",
+      "image": "Mr. Pushpendra.jpg",
+      "education": "BCA From LLDIMS",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-6394619776",
+        "email": "ppal36609@email.com",
+        "Linkedin": "linkedin.com/in/pushpendra-pal-b36ab5352",
+        "GitHub": "https://github.com/Push36609",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 6,
+      "name": "Mr. Sahil Pant",
+      "role": "Intern",
+      "about": "BCA(AI) from LLDIMS",
+      "image": "Mr. Sahil Pant.jpg",
+      "education": "",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 7,
+      "name": "Mr. Ankush Rawat",
+      "role": "Intern",
+      "about": "BCA(AI) from LLDIMS",
+      "image": "Mr. Ankush Rawat.png",
+      "education": "",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-8826343324",
+        "email": "rawatankush549@gmail.com",
+        "Linkedin": "linkedin.com/in/ankushrawat12",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 8,
+      "name": "Mr. Rashid Reyaz",
+      "role": "Intern",
+      "about": "About information coming soon",
+      "image": "Mr. Rashid Riyaz.png",
+      "education": "",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "rashidreyaz4190@gmail.com",
+        "Linkedin": "linkedin.com/in/rashid-reyaz-06210322a",
+        "GitHub": "",
+        "Google Scholar": ""
+      }
+    },
+    {
+      "id": 9,
+      "name": "Ms. Shravani Maity",
+      "role": "Intern",
+      "about": "BCA(AI) from LLDIMS",
+      "image": "Ms. Shravani Maity.jpg",
+      "education": "BCA From LLDIMS",
+      "contact": {
+        "address": "JNU, Delhi",
+        "mobile": "+91-9123456780",
+        "email": "anil@email.com",
+        "Linkedin": "linkedin.com/in/shravani-maity-8725a535a",
+        "GitHub": "https://github.com/shravanimaity",
+        "Google Scholar": ""
+      }
+    }
+  ]
+}
