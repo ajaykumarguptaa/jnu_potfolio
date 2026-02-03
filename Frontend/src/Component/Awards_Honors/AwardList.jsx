@@ -21,7 +21,6 @@ const AwardList = () => {
 
   return (
     <div className="p-8">
-
       <h1 className="text-3xl font-bold mb-6">Awards & Honors</h1>
 
       <Link
@@ -38,9 +37,10 @@ const AwardList = () => {
             className="p-4 bg-white border rounded-lg shadow-sm flex justify-between items-center hover:shadow-lg shadow-slate-950 transition-all duration-300"
           >
             <div>
-              <h2 className="text-xl font-bold">{award.organisation}</h2>
-              <p className="font-semibold">{award.department}</p>
+              <h1 className="text-xl font-bold">{award.title}</h1>
+              <h2 className="font-semibold">{award.department}</h2>
               <p className="text-gray-600">{award.duration}</p>
+              <p className="text-xl font-bold">{award.organisation}</p>
             </div>
 
             <div className="flex  flex-col gap-3  ">
@@ -57,11 +57,9 @@ const AwardList = () => {
                 Delete
               </button>
             </div>
-
           </div>
         ))}
       </div>
-
     </div>
   );
 };

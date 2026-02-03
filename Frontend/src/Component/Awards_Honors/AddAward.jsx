@@ -6,6 +6,7 @@ const AddAward = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
+    title: "",
     organisation: "",
     department: "",
     duration: "",
@@ -29,17 +30,15 @@ const AddAward = () => {
 
   return (
     <div className="p-8 py-20 max-w-lg mx-auto">
-
       <h1 className="text-3xl font-bold mb-6">Add Award</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-
         <div>
-          <label className="font-semibold">Organisation</label>
+          <label className="font-semibold">Title</label>
           <input
             type="text"
-            name="organisation"
-            value={form.organisation}
+            name="title"
+            value={form.title}
             onChange={handleInput}
             className="w-full p-2 border rounded"
           />
@@ -66,13 +65,21 @@ const AddAward = () => {
             className="w-full p-2 border rounded"
           />
         </div>
+        <div>
+          <label className="font-semibold">About</label>
+          <input
+            type="text"
+            name="organisation"
+            value={form.organisation}
+            onChange={handleInput}
+            className="w-full p-2 border rounded"
+          />
+        </div>
 
         <button className="px-4 py-2 bg-slate-900 text-white rounded-md">
           Add Award
         </button>
-
       </form>
-
     </div>
   );
 };

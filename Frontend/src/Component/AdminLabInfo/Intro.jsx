@@ -44,9 +44,9 @@ const Intro = () => {
           className="
             relative
             m-4 w-[95%] 
-            bg-gradient-to-r from-blue-50 via-purple-50 to-cyan-50 
+            bg-gradient-to-r from-blue-50 via-cyan-50 to-purple-50 
             rounded-2xl shadow-[5px_5px_15px] border-2 border-black
-            hover:scale-[1.03] hover:shadow-[0px_10px_24px_rgba(144,194,247,1)] hover:border-[#90c2f7]
+            hover:scale-[1.03] hover:shadow-[0px_10px_24px_rgba(144,194,247,1)] hover:border-black
             transition-all duration-300
             flex flex-row gap-8 items-center p-6
 

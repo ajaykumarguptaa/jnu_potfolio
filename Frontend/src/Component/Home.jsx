@@ -13,15 +13,14 @@ import CircularGallery from "./Slider/CircularGallery";
 
 function Home() {
   return (
-    <div className="bg-gradient-to-t from-blue-50 to-sky-50">
+    <div className="bg-gradient-to-r from-blue-50 via-cyan-50 to-sky-50">
       <Hero />
       <Intro />
       <InFo />
       <CurrentmemberSlider />
-
-      {/* <CardSlider/> */}
       <AlumniSlider />
       <InternSlider />
+      {/* <CardSlider/> */}
 
       {/* <div style={{ height: "600px", position: "relative" }}>
         <CircularGallery

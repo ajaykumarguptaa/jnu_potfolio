@@ -110,14 +110,16 @@ export const createTable = async () => {
         )
       `);
     await db.query(`
-         CREATE TABLE IF NOT EXISTS award_Honors (
-          award_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
-          organisation VARCHAR(150) NOT NULL,
-          department VARCHAR(150),
-          duration VARCHAR(100),
-          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
-      `);
+  CREATE TABLE IF NOT EXISTS award_Honors (
+    award_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    title VARCHAR(255) DEFAULT NULL,
+    organisation VARCHAR(150) NOT NULL,
+    department VARCHAR(150),
+    duration VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+`);
+
     await db.query(`
          CREATE TABLE IF NOT EXISTS academic_career (
     academic_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
@@ -132,6 +134,7 @@ export const createTable = async () => {
     await db.query(`
          CREATE TABLE IF NOT EXISTS other_activities (
     activity_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    title VARCHAR(150) NOT NULL,
     organisation VARCHAR(150) NOT NULL,
     duration VARCHAR(100),
     description TEXT,

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../../api/backend.axios";
 import { motion } from "framer-motion";
-import { Award, GraduationCap, Briefcase, ScrollText, Users } from "lucide-react";
+import {
+  Award,
+  GraduationCap,
+  Briefcase,
+  ScrollText,
+  Users,
+} from "lucide-react";
 
 export default function Info() {
   const [administrative, setAdministrative] = useState([]);
@@ -9,13 +15,12 @@ export default function Info() {
   const [academic, setAcademic] = useState([]);
   const [otherActivities, setOtherActivities] = useState([]);
 
-
   // FETCH ALL SECTIONS
 
   useEffect(() => {
-    api.get("/administrativeactivities/getactivities").then((res) =>
-      setAdministrative(res.data)
-    );
+    api
+      .get("/administrativeactivities/getactivities")
+      .then((res) => setAdministrative(res.data));
   }, []);
 
   useEffect(() => {
@@ -23,17 +28,16 @@ export default function Info() {
   }, []);
 
   useEffect(() => {
-    api.get("/academicCareer/GetAcademicCareers").then((res) =>
-      setAcademic(res.data)
-    );
+    api
+      .get("/academicCareer/GetAcademicCareers")
+      .then((res) => setAcademic(res.data));
   }, []);
 
   useEffect(() => {
-    api.get("/otherActivities/getallactivities").then((res) =>
-      setOtherActivities(res.data)
-    );
+    api
+      .get("/otherActivities/getallactivities")
+      .then((res) => setOtherActivities(res.data));
   }, []);
-
 
   // CARD COMPONENT
 
@@ -45,15 +49,13 @@ export default function Info() {
                  hover:border-purple-500 hover:shadow-xl"
     >
       <div className="flex gap-4">
-        <div className="p-2 bg-yellow-100 rounded-full">{icon}</div>
+        <div className="p-2 bg-yellow-100 rounded-full h-fit">{icon}</div>
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-bold text-black">{title}</h2>
           {organisation && (
             <p className="text-gray-700 font-medium">{organisation}</p>
           )}
-          {duration && (
-            <p className="text-gray-500 italic">{duration}</p>
-          )}
+          {duration && <p className="text-gray-500 italic">{duration}</p>}
           {description && (
             <p className="text-sm text-gray-600 mt-1">{description}</p>
           )}
@@ -94,8 +96,9 @@ export default function Info() {
             key={item.award_id}
             icon={<Award className="w-6 h-6 text-yellow-600" />}
             title={item.title}
-            organisation={`${item.organisation} (${item.department})`}
+            department={item.department}
             duration={item.duration}
+            organisation={item.organisation}
           />
         ))}
       </Section>

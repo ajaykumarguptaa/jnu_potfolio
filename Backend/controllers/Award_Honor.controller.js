@@ -1,17 +1,21 @@
 import db from "../config/db.js";
 
 export const createAward = async (req, res) => {
-  const { organisation, department, duration } = req.body;
+  const { title, organisation, department, duration } = req.body;
+
   try {
     const [result] = await db.query(
-      `INSERT INTO award_Honors (organisation, department, duration) VALUES (?, ?, ?)`,
-      [organisation, department, duration]
+      `INSERT INTO award_Honors (title, organisation, department, duration)
+       VALUES (?, ?, ?, ?)`,
+      [title || null, organisation, department, duration]
     );
-    res.json({ message: "Award created", id: result.insertId });
+
+    res.json({ message: "Award Added", id: result.insertId });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
 
 export const getAwards = async (req, res) => {
   try {

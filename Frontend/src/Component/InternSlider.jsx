@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import { useNavigate } from "react-router-dom";
+ 
 import { api } from "../../api/backend.axios";
 
 function InternSlider() {
@@ -14,6 +13,7 @@ function InternSlider() {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // FETCH INTERNS
   useEffect(() => {
     api
       .get("/interns/")
@@ -62,15 +62,15 @@ function InternSlider() {
       >
         {members.map((d, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-blue-100 h-110 w-full shadow-md rounded-2xl border overflow-hidden 
-                            hover:shadow-xl transition duration-300">
+            <div className="bg-blue-100 h-110 w-90 ml-10 shadow-md rounded-4xl border overflow-auto
+                            hover:shadow-xl hover:shadow-gray-700 hover:scale-103 transition duration-300">
               
               {/* IMAGE */}
-              <div className="flex items-center justify-center h-70 bg-blue-50">
+              <div className="flex items-center justify-center h-65 bg-blue-50">
                 <img
                   src={d.profile_picture}
                   alt={d.name}
-                  className="h-60 w-60 rounded-full object-cover hover:scale-110 
+                  className="h-58 w-58 rounded-full object-cover hover:scale-105 hover:shadow-lg hover:shadow-gray-700 hover:border-2 hover:border-gray-800
                              transition-transform duration-300"
                 />
               </div>
@@ -81,11 +81,14 @@ function InternSlider() {
                   <span className="font-bold text-black">Name:</span> {d.name}
                 </h3>
                 <p className="text-gray-700">
+                  <span className="font-bold text-black">Education:</span> {d.description}
+                </p>
+                {/* <p className="text-gray-700">
                   <span className="font-bold text-black">Role:</span> {d.role}
-                </p>
-                <p className="text-gray-700">
+                </p> */}
+                {/* <p className="text-gray-700">
                   <span className="font-bold text-black">Email:</span> {d.email}
-                </p>
+                </p> */}
 
                 {/* <button
                   onClick={() => navigate(`/Member/Interns/${d.intern_id}`)}

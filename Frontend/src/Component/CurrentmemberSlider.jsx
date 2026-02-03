@@ -17,7 +17,8 @@ function CurrentMemberSlider() {
     api
       .get("/member/allmember", { withCredentials: true })
       .then((res) => {
-        console.log("Members Data:", res.data);
+        
+        // console.log("Members Data:", res.data);
         setMembers(res.data || []);
         setLoading(false);
       })
@@ -41,7 +42,7 @@ function CurrentMemberSlider() {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
-        loop={loopMode}             // ← FIXED
+        loop={loopMode} // ← FIXED
         autoplay={loopMode ? { delay: 2000 } : false}
         pagination={{ clickable: true }}
         breakpoints={{
@@ -53,33 +54,39 @@ function CurrentMemberSlider() {
       >
         {members.map((d) => (
           <SwiperSlide key={d.member_id}>
-            <div className="
-              bg-blue-100 h-110 w-90 shadow-md rounded-2xl border overflow-hidden 
-              hover:shadow-xl transition-shadow duration-300 
+            <div
+              className="
+              bg-blue-100 h-120 w-90  ml-9 shadow-md rounded-4xl border overflow-hidden 
+              hover:shadow-xl hover:shadow-gray-700 hover:scale-103 transition-shadow duration-300 
               max-[380px]:w-75
-            ">
-              
+            "
+            >
               {/* IMAGE */}
-              <div className="flex flex-row items-center justify-center h-70 bg-blue-50">
+              <div className="flex flex-row items-center justify-center h-65 bg-blue-50">
                 <img
                   src={d.profile_picture}
                   alt={d.member_name}
-                  className="h-60 w-60 rounded-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="h-60 w-60 rounded-full object-cover hover:scale-105 hover:shadow-lg hover:shadow-gray-700 hover:border-2 hover:border-gray-600 transition-transform duration-300"
                 />
               </div>
 
               {/* TEXT */}
               <div className="flex flex-row items-center justify-center">
                 <div className="p-4 text-center">
-                  
                   {/* CORRECTED NAME */}
                   <h3 className="text-2xl font-semibold mb-2">
                     {d.member_name}
                   </h3>
 
                   {/* CORRECTED ROLE */}
-                  <p className="text-gray-600"><span className="text-black font-bold">Role: </span>{d.role}</p>
-                   <p className="text-gray-600"><span className="text-black font-bold">About: </span>{d.description}</p>
+                  <p className="text-gray-600">
+                    <span className="text-black font-bold">Role: </span>
+                    {d.role}
+                  </p>
+                  <p className="text-gray-600">
+                    <span className="text-black font-bold">Education: </span>
+                    {d.description}
+                  </p>
 
                   {/* MORE BUTTON */}
                   {/* <button
@@ -91,10 +98,8 @@ function CurrentMemberSlider() {
                   >
                     More
                   </button> */}
-
                 </div>
               </div>
-
             </div>
           </SwiperSlide>
         ))}

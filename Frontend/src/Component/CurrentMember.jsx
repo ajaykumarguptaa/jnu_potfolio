@@ -91,11 +91,11 @@ export default function Members() {
   };
 
   const Skeleton = () => (
-    <div className="animate-pulse bg-white rounded-3xl p-8 shadow-md min-h-[320px]" />
+    <div className="animate-pulse bg-white rounded-3xl p-8 shadow-md `min-h-[320px]`" />
   );
 
   return (
-    <div className="min-h-screen bg-[#eef2f6] pt-30 px-6 sm:px-10 lg:px-16 pb-28">
+    <div className="min-h-screen bg-[#eef2f6] pt-2 px-6 sm:px-10 lg:px-16 pb-18">
 
       {/* HEADER */}
       <motion.h1

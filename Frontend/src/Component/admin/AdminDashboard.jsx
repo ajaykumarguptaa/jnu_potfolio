@@ -6,13 +6,16 @@ export default function AdminDashboard() {
   const navigate = useNavigate();
 
   const dashboardButtons = [
-    { label: "Administrative Positions / Activities", to: "/activity/position" },
+    {
+      label: "Administrative Positions / Activities",
+      to: "/activity/position",
+    },
     { label: "Awards / Honors", to: "/awards/honors" },
     { label: "Academic Career / Member", to: "/careermember" },
     { label: "Other Activities", to: "/otherActivities" },
     { label: "Add Photos to Gallery", to: "/gallery" },
     { label: "Add Project", to: "projectAccess" },
-    { label: "Reacerch", to: "researchAccess" },
+    { label: "Research", to: "researchAccess" },
     { label: "Alumni  ", to: "memberAccess" },
     { label: "Current Member  ", to: "CurrentMember" },
     { label: "Interns  ", to: "InternAccess" },
@@ -22,14 +25,15 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-16 px-4">
-
       {/* HEADER */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-5xl mb-10"
       >
-        <h1 className="text-4xl font-bold text-gray-800">Admin Dashboard</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mt-10">
+          Admin Dashboard
+        </h1>
         <p className="text-gray-500 mt-1">
           Manage all website activities from one place.
         </p>
@@ -57,12 +61,12 @@ export default function AdminDashboard() {
             className="
               w-full py-6 px-6
               rounded-2xl
-              bg-white 
-              shadow-md 
-              hover:shadow-xl 
-              transition-all 
-              text-gray-700
-              font-semibold
+              bg-gray-400 
+              shadow-lg 
+              hover:shadow-xl hover:shadow-gray-700
+              transition-all hover:scale-105 
+              text-gray-900
+              font-semibold 
               border border-gray-200
             "
           >

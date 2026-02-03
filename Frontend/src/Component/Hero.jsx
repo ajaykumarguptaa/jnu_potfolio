@@ -10,7 +10,7 @@ const slides = [
         <span className="text-lime-500 font-semibold">Computational Biology</span>
       </>
     ),
-    gradient: "from-blue-200 via-sky-100 to-white",
+    gradient: "from-blue-50 via-sky-50 to-cyan-50",
   },
   {
     title: "We Believe We Can Always Do More",
@@ -20,7 +20,7 @@ const slides = [
         <span className="text-green-500 font-semibold">Computational Excellence</span>
       </>
     ),
-    gradient: "from-purple-200 via-pink-100 to-white",
+    gradient: "from-purple-50 via-pink-50 to-cyan-50",
   },
   {
     title: "Going Beyond is Our Purpose",
@@ -30,7 +30,7 @@ const slides = [
         <span className="text-blue-500 font-semibold">Computational Research</span>
       </>
     ),
-    gradient: "from-pink-200 via-blue-100 to-white",
+    gradient: "from-pink-50 via-blue-50 to-cyan-50",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Hero() {
   return (
     <div
       className={`w-full min-h-[500px] md:min-h-[650px] pt-24 relative overflow-hidden
-        bg-gradient-to-br ${slides[index].gradient}
+        bg-gradient-to-br ${slides[index].gradient} 
         flex items-center justify-center`}
       onMouseEnter={() => clearInterval(timerRef.current)}
       onMouseLeave={() => {

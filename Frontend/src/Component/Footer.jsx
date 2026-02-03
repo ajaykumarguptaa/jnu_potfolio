@@ -22,12 +22,12 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="w-full box-border bg-gradient-to-t from-blue-50 to-sky-50 text-purple-700 mt-5 pl-4 pr-8 font-sans border-t-2 [border-image: linear-gradient(to right, #b99ee8, #a2d5b7)]">
+    <footer className="w-full flex flex-col bg-gradient-to-t from-blue-50 to-sky-50 text-purple-700 mt-5 pl-1 pr-1 font-sans border-t-2 [border-image: linear-gradient(to right, #b99ee8, #a2d5b7)]">
       
-      <div className="flex justify-between flex-wrap max-w-300 mx-auto gap-12">
+      <div className="flex justify-evenly flex-wrap max-w-900 mx-auto gap-2">
 
         {/* ABOUT SECTION */}
-        <div className="flex-[1_1_200px] mb-4 mt-4">
+        <div className="flex flex-col mb-2 mt-4 ml-15">
           <h2 className="text-2xl font-bold">BioComputaionalLab</h2>
 
           <p className="my-2 mx-0 leading-6 text-[rgb(38,31,31)] text-base">
@@ -50,7 +50,7 @@ function Footer() {
         </div>
 
         {/* QUICK LINKS */}
-        <div className="flex-[1_1_200px] mb-4">
+        <div className="flex-[1_1_200px] mb-4 ml-15">
           <h3 className="text-base mb-2 text-green-600 font-semibold mt-4">Quick Links</h3>
           <ul>
             <li className="mb-2"><a className="text-gray-700 hover:text-purple-600" href="/">Home</a></li>

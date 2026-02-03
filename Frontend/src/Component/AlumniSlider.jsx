@@ -18,26 +18,20 @@ function AlumniSlider() {
     api
       .get("/almember/get", { withCredentials: true })
       .then((res) => {
-        console.log("Alumni Data:", res.data);
+       const data = res.data || [];
 
-        // Parse JSON fields safely
-        const parsed = res.data.map((item) => ({
-          ...item,
-          education: item.education
-            ? JSON.parse(item.education)?.education
-            : "",
-          description: item.description
-            ,
-          research_interests: item.research_interests
-            ? JSON.parse(item.research_interests)?.research_interests
-            : "",
-        }));
+        // 🔥 Fix loop: Duplicate slides if less than 6
+        let finalSlides = data;
+        if (data.length > 0 && data.length < 6) {
+          const repeatTimes = Math.ceil(6 / data.length);
+          finalSlides = Array(repeatTimes).fill(data).flat();
+        }
 
-        setMembers(parsed);
+        setMembers(finalSlides);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching members:", err);
+        console.error("Fetch Error:", err);
         setLoading(false);
       });
   }, []);
@@ -77,16 +71,16 @@ function AlumniSlider() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-blue-100 h-110 w-90 shadow-md rounded-2xl border
-                         overflow-hidden hover:shadow-xl transition-shadow duration-300
+              className="bg-blue-100 h-120 w-90 ml-10 shadow-md rounded-4xl border
+                         overflow-auto hover:shadow-xl hover:shadow-gray-500 hover:scale-103 transition-shadow duration-300
                          max-[380px]:w-75"
             >
               {/* IMAGE */}
-              <div className="flex justify-center h-62 bg-blue-50">
+              <div className="flex justify-center h-68 bg-blue-50">
                 <img
                   src={d.profile_picture}
                   alt={d.name}
-                  className="h-60 w-60 rounded-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="h-60 w-60 rounded-full object-cover mt-4 hover:scale-105 hover:shadow-lg hover:shadow-gray-700 hover:border-2 hover:border-gray-700 transition-transform duration-300"
                 />
               </div>
 
@@ -98,7 +92,7 @@ function AlumniSlider() {
                 <p className="text-gray-600"><span className="text-black font-bold">Education: </span>{d.education}</p>
 
                 {/* EMAIL */}
-                <p className="text-gray-600"><span className="text-black font-bold">@Email: </span>{d.email}</p>
+                {/* <p className="text-gray-600"><span className="text-black font-bold">@Email: </span>{d.email}</p> */}
 
                 {/* MORE BUTTON */}
                 {/* <button
