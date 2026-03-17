@@ -71,6 +71,7 @@ export default function EventAccess() {
   };
 
   const handlePointerLeave = (ref) => {
+    
     const el = ref.current;
     if (el)
       el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
