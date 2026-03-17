@@ -25,8 +25,8 @@ const Header = () => {
             <NavLink
               to="/Home"
               className={({ isActive }) =>
-                `no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
-                  isActive ? "text-cyan-600  " : "text-[#551A8B]"
+                `no-underline text-xl hover:text-gray-600  hover:scale-120 hover:transition-all duration-200 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                  isActive ? "text-green-800 font-bold" : "text-[#000000]"
                 }`
               }
             >
@@ -40,7 +40,7 @@ const Header = () => {
                 onClick={() => setIsMembersOpen((prev) => !prev)}
                 className="flex items-center ml-1 bg-none border-none hover:text-[#0891b2] space-x-1 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
               >
-                <span className="text-[#551A8B] text-xl hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">
+                <span className="text-[#000000] text-xl hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]">
                   Members
                 </span>
                 <svg
@@ -68,7 +68,7 @@ const Header = () => {
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}>
                     <Link
                       to="/Member/CurrentMember"
-                      className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                      className="block py-2 px-2 text-[#000000] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
                     >
                       Current Members
                     </Link>
@@ -76,7 +76,7 @@ const Header = () => {
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}>
                     <Link
                       to="/Alumni"
-                      className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                      className="block py-2 px-2 text-[#0e0e0e] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
                     >
                       Alumni
                     </Link>
@@ -84,7 +84,7 @@ const Header = () => {
                   <li onClick={() => setIsMembersOpen(!isMembersOpen)}>
                     <Link
                       to="/Interns"
-                      className="block py-2 px-2 text-[#551A8B] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                      className="block py-2 px-2 text-[#050505] text-[1rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
                     >
                       Interns
                     </Link>
@@ -96,8 +96,8 @@ const Header = () => {
             <NavLink
               to="/Research"
               className={({ isActive }) =>
-                `no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
-                  isActive ? "text-cyan-600  " : "text-[#551A8B]"
+                `no-underline text-xl hover:text-gray-600  hover:scale-120 hover:transition-all duration-200 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                  isActive ? "text-green-800 font-bold" : "text-[#000000]"
                 }`
               }
             >
@@ -107,8 +107,8 @@ const Header = () => {
             <NavLink
               to="/Event"
               className={({ isActive }) =>
-                `no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
-                  isActive ? "text-cyan-600  " : "text-[#551A8B]"
+                `no-underline text-xl hover:text-gray-600  hover:scale-120 hover:transition-all duration-200 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                  isActive ? "text-green-800 font-bold" : "text-[#000000]"
                 }`
               }
             >
@@ -118,8 +118,8 @@ const Header = () => {
             <NavLink
               to="/Project"
               className={({ isActive }) =>
-                `no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
-                  isActive ? "text-cyan-600  " : "text-[#551A8B]"
+                `no-underline text-xl hover:text-gray-600  hover:scale-120 hover:transition-all duration-200 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                  isActive ? "text-green-800 font-bold" : "text-[#000000]"
                 }`
               }
             >
@@ -129,8 +129,8 @@ const Header = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `no-underline text-xl hover:text-cyan-600 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
-                  isActive ? "text-cyan-600  " : "text-[#551A8B]"
+                `no-underline text-xl hover:text-gray-600  hover:scale-120 hover:transition-all duration-200 hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)] ${
+                  isActive ? "text-green-800 font-bold" : "text-[#000000]"
                 }`
               }
             >
@@ -138,25 +138,12 @@ const Header = () => {
               Contact Us
             </NavLink>
 
-            <div>
-              {/* <button
-                onClick={() => navigate("/admin-login")}
-                className=" px-2 py-1 
-             text-blue-500 border-2 border-blue-400
-             rounded-md font-medium
-             transition duration-200
-             hover:bg-blue-400 hover:text-white
-             focus:outline-none focus:ring-2 focus:ring-blue-300
-           active:bg-blue-500"
-              >
-                Admin
-              </button> */}
-            </div>
+             
           </nav>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center space-x-2">
-            <button
+            {/* <button
               onClick={() => navigate("/admin-login")}
               className=" px-2 py-1
              text-blue-600 border-2 border-blue-500
@@ -167,7 +154,7 @@ const Header = () => {
            active:bg-blue-400 max-[400px]:hidden"
             >
               Admin
-            </button>
+            </button> */}
 
             <button
               onClick={() => {
@@ -242,28 +229,28 @@ const Header = () => {
             {isMembersOpen && (
               <ul className="pl-4 space-y-1">
                 <li onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                  <Link
-                    to="/Member/Current Member"
-                    className="block py-1 text-[1.5rem] text-[#9868c5] hover:text-cyan-600"
-                  >
-                    Current Member
-                  </Link>
+                 <Link
+                      to="/Member/CurrentMember"
+                      className="block py-2 px-2 text-[#000000] text-[1.5rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                    >
+                      Current Members
+                    </Link>
+                </li>
+                <li onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                 <Link
+                      to="/Alumni"
+                      className="block py-2 px-2 text-[#0e0e0e] text-[1.5rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                    >
+                      Alumni
+                    </Link>
                 </li>
                 <li onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <Link
-                    to="/Member/Alumni"
-                    className="block py-1 text-[1.5rem] text-[#9868c5] hover:text-cyan-600"
-                  >
-                    Alumni
-                  </Link>
-                </li>
-                <li onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                  <Link
-                    to="/Member/Interns"
-                    className="block py-1 text-[1.5rem] text-[#9868c5] hover:text-cyan-600"
-                  >
-                    Interns
-                  </Link>
+                      to="/Interns"
+                      className="block py-2 px-2 text-[#050505] text-[1.5rem] hover:text-[#0891b2] hover:drop-shadow-[0_6px_6px_rgba(3,245,249,0.8)]"
+                    >
+                      Interns
+                    </Link>
                 </li>
               </ul>
             )}

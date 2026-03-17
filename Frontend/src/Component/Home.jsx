@@ -13,7 +13,7 @@ import CircularGallery from "./Slider/CircularGallery";
 
 function Home() {
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-cyan-50 to-sky-50">
+    <div >
       <Hero />
       <Intro />
       <InFo />

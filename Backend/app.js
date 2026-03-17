@@ -22,6 +22,7 @@ import alluminirouter from "./routes/Allumini.routes.js";
 import internrouter from "./routes/intern.routes.js";
 import adminInfoRoutes from "./routes/AdminInfo.Routes.js";
 import authrouter from "./routes/Auth.route.js";
+import contect from "./routes/contact.route.js";
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use("/api/almember", alluminirouter);
 app.use("/api/interns", internrouter);
 app.use("/api/admininfo", adminInfoRoutes);
 app.use("/api/auth", authrouter);
+app.use("/api/contact", contect);
 
 app.get("/", (req, res) => res.send("server is running "));
 

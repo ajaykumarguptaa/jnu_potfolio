@@ -100,7 +100,7 @@ const router = createBrowserRouter([
 
 
       {
-        path: "jnu/admin/dashboard",
+        path: "jnu/admin@2026/dashboard",
         children: [
           { index: true, element: <AdminDashboard /> },
           { path: "projectAccess", element: <ProjectAccess/>},

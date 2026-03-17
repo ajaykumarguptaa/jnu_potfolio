@@ -20,7 +20,7 @@ function InternSlider() {
       .then((res) => {
         const data = res.data || [];
 
-        // 🔥 Fix loop: Duplicate slides if less than 6
+        //Fix loop: Duplicate slides if less than 6
         let finalSlides = data;
         if (data.length > 0 && data.length < 6) {
           const repeatTimes = Math.ceil(6 / data.length);
@@ -62,11 +62,11 @@ function InternSlider() {
       >
         {members.map((d, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-blue-100 h-110 w-90 ml-10 shadow-md rounded-4xl border overflow-auto
-                            hover:shadow-xl hover:shadow-gray-700 hover:scale-103 transition duration-300">
+            <div className=" h-110 w-90 ml-10 shadow-md rounded-4xl border overflow-auto
+                            hover:shadow-xl hover:shadow-gray-700  hover:border-0 hover:scale-105 transition duration-300">
               
               {/* IMAGE */}
-              <div className="flex items-center justify-center h-65 bg-blue-50">
+              <div className="flex items-center justify-center h-65  bg-blue-50">
                 <img
                   src={d.profile_picture}
                   alt={d.name}

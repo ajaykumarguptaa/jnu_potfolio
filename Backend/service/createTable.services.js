@@ -220,8 +220,17 @@ export const createTable = async () => {
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
         ON UPDATE CURRENT_TIMESTAMP
 );
+ 
 
  `);
+  await db.query(`
+CREATE TABLE IF NOT EXISTS Contact (
+    contact_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    name VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    message TEXT NOT NULL
+);
+`);
 
     console.log(" Tables created and admin limit enforced,uuid id");
   } catch (error) {

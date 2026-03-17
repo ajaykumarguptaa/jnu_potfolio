@@ -1,12 +1,17 @@
-import transporter from "../config/mailer.js";
+import { transporter } from "../config/transporter.js";
 
-async function sendEmail() {
+export async function sendEmail(name, email, message) {
   await transporter.sendMail({
-    from: process.env.SMTP_USER,
-    to: "test@example.com",
-    subject: "Test Email",
-    text: "It works!"
+    from: `"Contact Form" <${process.env.MAIL_FROM}>`,
+    to: process.env.ADMIN_EMAIL,
+    replyTo: email,
+    subject: `New Contact Message from ${name}`,
+    text: `
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+`
   });
 }
-
-sendEmail();

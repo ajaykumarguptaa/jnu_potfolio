@@ -95,7 +95,7 @@ export default function Members() {
   );
 
   return (
-    <div className="min-h-screen bg-[#eef2f6] pt-2 px-6 sm:px-10 lg:px-16 pb-18">
+    <div className="min-h-screen bg-[#eef2f6] pt-2 px-6 sm:px-10 lg:px-16 pb-10">
 
       {/* HEADER */}
       <motion.h1

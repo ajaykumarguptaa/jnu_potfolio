@@ -6,11 +6,11 @@ const slides = [
     title: "Welcome to Health Informatics",
     line: (
       <>
-        <span className="text-blue-600 font-semibold">Advancing</span> Bioinformatics &{" "}
-        <span className="text-lime-500 font-semibold">Computational Biology</span>
+        <span className="text-blue-400 font-semibold">Advancing</span> Bioinformatics &{" "}
+        <span className="text-lime-400 font-semibold">Computational Biology</span>
       </>
     ),
-    gradient: "from-blue-50 via-sky-50 to-cyan-50",
+    gradient: "from-cyan-50 via-cyan-50 to-cyan-50",
   },
   {
     title: "We Believe We Can Always Do More",
@@ -20,7 +20,7 @@ const slides = [
         <span className="text-green-500 font-semibold">Computational Excellence</span>
       </>
     ),
-    gradient: "from-purple-50 via-pink-50 to-cyan-50",
+    gradient: "from-cyan-50 via-cyan-50 to-cyan-50",
   },
   {
     title: "Going Beyond is Our Purpose",
@@ -30,7 +30,7 @@ const slides = [
         <span className="text-blue-500 font-semibold">Computational Research</span>
       </>
     ),
-    gradient: "from-pink-50 via-blue-50 to-cyan-50",
+    gradient: "from-cyan-50 via-cyan-50 to-cyan-50",
   },
 ];
 
