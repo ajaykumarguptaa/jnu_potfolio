@@ -18,36 +18,26 @@ export default function ProjectAccess() {
   const gridRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // RESET cardRefs when project count changes
   useEffect(() => {
     cardRefs.current = cardRefs.current.slice(0, projects.length);
   }, [projects]);
 
-   
-  // FETCH ALL PROJECTS
- 
+  // FETCH
   useEffect(() => {
     api
       .get("/project/getallproject", { withCredentials: true })
       .then((res) => {
-        const d = res.data;
-        const list =
-          Array.isArray(d) ? d :
-          Array.isArray(d.data) ? d.data :
-          Array.isArray(d.projects) ? d.projects :
-          Array.isArray(d.project) ? d.project : [];
-
+        const list = res?.data?.data || [];
         setProjects(list);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
 
-   
-  // LENIS SMOOTH SCROLL + GSAP animations
-  
+  // LENIS + GSAP
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+
     function raf(t) {
       lenis.raf(t);
       requestAnimationFrame(raf);
@@ -56,7 +46,7 @@ export default function ProjectAccess() {
 
     if (!loading && projects.length > 0) {
       const ctx = gsap.context(() => {
-        gsap.from(gsap.utils.toArray(".project-card"), {
+        gsap.from(".project-card", {
           opacity: 0,
           y: 40,
           duration: 0.8,
@@ -73,27 +63,20 @@ export default function ProjectAccess() {
     }
   }, [loading, projects]);
 
-  
-  // DELETE PROJECT
-  
+  // DELETE
   const deleteProject = async (id) => {
     if (!window.confirm("Delete this project?")) return;
 
     try {
       await api.delete(`/project/deleteproject/${id}`);
-
-      // Remove from UI instantly
       setProjects((prev) => prev.filter((p) => p.project_id !== id));
-
-      alert("Project deleted successfully!");
-    } catch (err) {
-      alert("Delete failed.");
+      alert("Deleted!");
+    } catch {
+      alert("Delete failed");
     }
   };
 
-  
-  // PARALLAX EFFECT
-  
+  // PARALLAX
   const handlePointerMove = (e, index) => {
     const el = cardRefs.current[index];
     if (!el) return;
@@ -102,22 +85,16 @@ export default function ProjectAccess() {
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
 
-    const tiltX = (0.5 - y) * 10;
-    const tiltY = (x - 0.5) * 12;
-
-    el.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    el.style.transform = `perspective(900px) rotateX(${(0.5 - y) * 10}deg) rotateY(${(x - 0.5) * 12}deg)`;
   };
 
   const handlePointerLeave = (index) => {
     const el = cardRefs.current[index];
     if (el) {
-      el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
+      el.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
     }
   };
 
-
-  // SKELETON LOADER
-  
   const Skeleton = () => (
     <div className="animate-pulse bg-white rounded-3xl p-8 shadow-md min-h-[360px]" />
   );
@@ -125,140 +102,95 @@ export default function ProjectAccess() {
   return (
     <div className="min-h-screen bg-[#eef2f6] pt-20 px-6 sm:px-10 lg:px-16 pb-28">
 
-      {/* PAGE TITLE */}
+      {/* TITLE */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center text-4xl md:text-5xl font-extrabold text-slate-900 mb-6"
+        className="text-center text-4xl font-extrabold mb-6"
       >
         Projects
       </motion.h1>
 
-      {/* LOADING */}
+      {/* ADD PROJECT BUTTON */}
+      <button
+        onClick={() => navigate("/AddProject")}
+        className="fixed bottom-10 right-10 bg-slate-900 text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-700 transition"
+      >
+        + Add Project
+      </button>
+
+      {/* CONTENT */}
       {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-10 ">
-          <Skeleton /> <Skeleton /> <Skeleton />
-          <Skeleton /> <Skeleton /> <Skeleton />
+        <div className="grid grid-cols-1 gap-10">
+          {[...Array(6)].map((_, i) => <Skeleton key={i} />)}
         </div>
       ) : projects.length === 0 ? (
-        <div className="text-center py-20 text-slate-600 text-xl">
+        <div className="text-center py-20 text-xl">
           No projects found.
         </div>
       ) : (
-        <div
-          ref={gridRef}
-          className=" grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-10"
-        >
+        <div ref={gridRef} className="grid grid-cols-1 gap-10">
           {projects.map((item, index) => (
             <div
               key={item.project_id}
               ref={(el) => (cardRefs.current[index] = el)}
-              className="project-card bg-white rounded-3xl p-8 shadow-xl border border-gray-400 relative overflow-hidden"
-              style={{ transformStyle: "preserve-3d", minHeight: 360 }}
+              className="project-card bg-white rounded-3xl p-8 shadow-xl border"
               onPointerMove={(e) => handlePointerMove(e, index)}
               onPointerLeave={() => handlePointerLeave(index)}
             >
-            
-              {/* TITLE */}
-             <div className=" flex justify-between">
-               <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                {item.project_title}
-              </h3>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
+              <div className="flex justify-between">
+                <h3 className="text-2xl font-bold">
+                  {item.project_title}
+                </h3>
+
+                <button
                   onClick={() => deleteProject(item.project_id)}
-                  className="px-[18px]  py-[10px] text-sm rounded-full  bg-red-100 transition-all duration-500 text-white hover:bg-red-400"
+                  className="bg-red-500 text-white px-3 rounded"
                 >
                   X
-                </motion.button>
-             </div>
+                </button>
+              </div>
 
-              {/* META */}
-              <p className="text-sm text-slate-700">
-                <strong>Organization:</strong> {item.organization}
-              </p>
-              <p className="text-sm text-slate-700">
-                <strong>Admin:</strong> {item.admin_user_name}
-              </p>
-              <p className="text-sm text-slate-700 mb-4">
-                <strong>Date:</strong> {item.project_date}
-              </p>
+              <p><b>Org:</b> {item.organization}</p>
+              <p><b>Admin:</b> {item.admin_user_name}</p>
+              <p><b>Date:</b> {item.project_date}</p>
 
-              {/* DESCRIPTION */}
-              <p className="text-slate-600 text-sm line-clamp-3">
+              <p className="mt-2 text-gray-600">
                 {item.description}
               </p>
 
-              {/* ACTION BUTTONS */}
-              <div className="mt-20 flex gap-3">
-                {/* VIEW */}
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.95 }}
+              <div className="mt-4">
+                <button
                   onClick={() => setViewItem(item)}
-                  className="w-20 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700"
+                  className="bg-black text-white px-4 py-2 rounded"
                 >
                   View
-                </motion.button>
-
-                {/* EDIT */}
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate(`/editProject/${item.project_id}`)}
-                  className="px-4 py-3 rounded-xl border border-slate-900 text-slate-900 font-semibold hover:bg-slate-100"
-                >
-                  Edit
-                </motion.button>
-
-                {/* DELETE */}
-                
+                </button>
               </div>
             </div>
           ))}
         </div>
       )}
 
-      {/*
-          VIEW MODAL
-   */}
+      {/* MODAL */}
       <AnimatePresence>
         {viewItem && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[999]"
+            className="fixed inset-0 bg-black/40 flex items-center justify-center"
             onClick={() => setViewItem(null)}
           >
             <motion.div
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 120 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl shadow-2xl w-[92%] max-w-xl p-10"
+              className="bg-white p-8 rounded-xl"
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl font-bold">
                 {viewItem.project_title}
               </h2>
-
-              <p className="text-slate-700 mb-2">
-                <strong>Organization:</strong> {viewItem.organization}
-              </p>
-              <p className="text-slate-700 mb-2">
-                <strong>Admin:</strong> {viewItem.admin_user_name}
-              </p>
-              <p className="text-slate-700 mb-4">
-                <strong>Date:</strong> {viewItem.project_date}
-              </p>
-
-              <p className="text-slate-600">{viewItem.description}</p>
+              <p>{viewItem.description}</p>
 
               <button
                 onClick={() => setViewItem(null)}
-                className="mt-8 w-full py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700"
+                className="mt-4 bg-black text-white px-4 py-2 rounded"
               >
                 Close
               </button>

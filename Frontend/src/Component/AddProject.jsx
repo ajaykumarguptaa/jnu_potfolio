@@ -13,23 +13,59 @@ export default function AddProject() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
+  // HANDLE INPUT CHANGE
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
+  // SIMPLE VALIDATION
+  const validateForm = () => {
+    if (!form.project_title.trim()) return "Project title is required";
+    if (!form.organization.trim()) return "Organization is required";
+    if (!form.project_date) return "Project date is required";
+    if (!form.description.trim()) return "Description is required";
+    return null;
+  };
+
+  // SUBMIT
   const submitProject = async (e) => {
     e.preventDefault();
+
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setError("");
     setLoading(true);
 
     try {
-      const res = await api.post("/project/createproject", form, { withCredentials: true });
+      await api.post("/project/createproject", form, {
+        withCredentials: true,
+      });
+
+      // Reset form (optional)
+      setForm({
+        project_title: "",
+        organization: "",
+        description: "",
+        project_date: "",
+      });
 
       alert("Project created successfully!");
-      navigate("/Project"); // redirect to project list
+
+      navigate("/Project");
     } catch (err) {
       console.error(err);
-      alert("Failed to create project.");
+      setError("Failed to create project. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -42,88 +78,90 @@ export default function AddProject() {
         <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">
           Add New Project
         </h1>
+   
+
+        {/* ERROR MESSAGE */}
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={submitProject} className="space-y-6">
 
           {/* PROJECT TITLE */}
           <div>
-            <label className="text-gray-800 font-medium">Project Title</label>
+            <label className="text-gray-800 font-medium">
+              Project Title
+            </label>
             <input
               type="text"
               name="project_title"
               value={form.project_title}
               onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-3 border rounded-xl"
+              className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-800"
               placeholder="Enter project title"
             />
           </div>
 
           {/* ORGANIZATION */}
           <div>
-            <label className="text-gray-800 font-medium">Organization</label>
+            <label className="text-gray-800 font-medium">
+              Organization
+            </label>
             <input
               type="text"
               name="organization"
               value={form.organization}
               onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-3 border rounded-xl"
-              placeholder="IIT Kanpur / JNU / etc."
+              className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-800"
+              placeholder="IIT / JNU / Company name"
             />
           </div>
 
-          {/* PROJECT DATE */}
+          {/* DATE */}
           <div>
-            <label className="text-gray-800 font-medium">Project Date</label>
+            <label className="text-gray-800 font-medium">
+              Project Date
+            </label>
             <input
               type="date"
               name="project_date"
               value={form.project_date}
               onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-3 border rounded-xl"
+              className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-800"
             />
           </div>
 
           {/* DESCRIPTION */}
           <div>
-            <label className="text-gray-800 font-medium">Description</label>
+            <label className="text-gray-800 font-medium">
+              Description
+            </label>
             <textarea
               name="description"
               value={form.description}
               onChange={handleChange}
-              required
               rows="5"
-              className="w-full mt-1 px-4 py-3 border rounded-xl"
+              className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-800"
               placeholder="Enter project description"
-            ></textarea>
+            />
           </div>
 
-          {/* ADMIN ID */}
-          {/* <div>
-            <label className="text-gray-800 font-medium">Admin ID</label>
-            <input
-              type="text"
-              name="admin_id"
-              value={form.admin_id}
-              onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-3 border rounded-xl"
-              placeholder="Enter admin ID"
-            />
-          </div> */}
-
-          {/* SUBMIT BUTTON */}
+          {/* SUBMIT */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition-all"
+            className="w-full py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition-all disabled:opacity-50"
           >
-            {loading ? "Submitting..." : "Create Project"}
+            {loading ? "Creating..." : "Create Project"}
           </button>
         </form>
       </div>
     </div>
   );
 }
+
+
+
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { api } from "../../api/backend.axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import {motion} from "framer-motion"
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -134,12 +135,12 @@ export default function Project() {
       >
         Projects
       </motion.h1>
-       <button
+       {/* <button
         onClick={() => navigate("/AddProject")}
         className="fixed bottom-10 right-10 bg-slate-900 text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-700"
       >
         + Add Project
-      </button>
+      </button> */}
 
       {/* LOADING */}
       {loading ? (
@@ -171,14 +172,14 @@ export default function Project() {
                <h3 className="text-2xl font-bold text-slate-900 mb-3">
                 {item.project_title}
               </h3>
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => deleteProject(item.project_id)}
                   className="px-[18px]  py-[10px] text-sm rounded-full  bg-red-100 transition-all duration-500 text-white hover:bg-red-400"
                 >
                   X
-                </motion.button>
+                </motion.button> */}
              </div>
 
               {/* META */}
