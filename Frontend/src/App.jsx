@@ -235,7 +235,7 @@ const router = createBrowserRouter([
 function App() {
   currentAdmin()
   const slice_data=useSelector((state)=>state.admin)
-  console.log("Admin slice data in App.jsx:",slice_data);
+  // console.log("Admin slice data in App.jsx:",slice_data);
   return <RouterProvider router={router} />;
 }
 

@@ -12,7 +12,7 @@ function Footer() {
       .get("/admininfo/")
       .then((res) => {
         setData(res.data[0]);        // receives object
-        console.log("Admin Info:", res.data);
+        // console.log("Admin Info:", res.data);
         setLoading(false);
       })
       .catch((err) => {
