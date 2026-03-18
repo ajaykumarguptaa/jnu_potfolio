@@ -15,7 +15,7 @@ export default function Info() {
   const [academic, setAcademic] = useState([]);
   const [otherActivities, setOtherActivities] = useState([]);
 
-  console.log("Administrative:", typeof(administrative));
+  // // console.log("Administrative:", typeof(administrative)); //check
 
   // FETCH ALL SECTIONS 
 

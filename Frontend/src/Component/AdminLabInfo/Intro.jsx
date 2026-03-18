@@ -12,7 +12,7 @@ const Intro = () => {
     api
       .get("/admininfo/")
       .then((res) => {
-        console.log("Admin Info:", res.data);
+        // console.log("Admin Info:", res.data); // check
         setAdmin(res.data[0]);
         setLoading(false);
       })

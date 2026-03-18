@@ -10,9 +10,9 @@ export const currentAdmin=()=>{
   useEffect(()=>{
     const fetchAdmin=async()=>{
       try{
-        const response=await api.get("/auth/me",{
-          withCredentials:true
-        });
+        // const response=await api.get("/auth/me",{
+        //   withCredentials:true
+        // });
         console.log("Admin info response:",response.data);
         if(response.data.status===200){
           dispatch(setAdminInfo(response.data.admin));
@@ -21,7 +21,7 @@ export const currentAdmin=()=>{
         }
 
       }catch(err){
-        console.error("Error fetching admin info:",err.message);
+        // console.error("Error fetching admin info:",err.message);
       }
     };
     fetchAdmin();

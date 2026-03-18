@@ -12,7 +12,7 @@ export default function SmoothHorizontalSlider() {
     api
       .get("/photoGallery/all")
       .then((res) => {
-        console.log("Gallery Images:", res.data);
+        // console.log("Gallery Images:", res.data);// check
         setPhotos(res.data);
       })
       .catch((err) => console.error("Error loading gallery:", err));
