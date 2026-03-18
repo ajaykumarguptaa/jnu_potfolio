@@ -6,6 +6,7 @@ import {
   GraduationCap,
   Briefcase,
   ScrollText,
+  Users,
 } from "lucide-react";
 
 export default function Info() {
@@ -14,33 +15,30 @@ export default function Info() {
   const [academic, setAcademic] = useState([]);
   const [otherActivities, setOtherActivities] = useState([]);
 
-  // FETCH ALL SECTIONS
+  console.log("Administrative:", typeof(administrative));
+
+  // FETCH ALL SECTIONS 
 
   useEffect(() => {
-    api.get("/administrativeactivities/getactivities")
-      .then((res) => {
-        // console.log("ADMIN:", res.data);
-        setAdministrative(res.data.data || []);
-      })
-      .catch(() => setAdministrative([]));
+    api
+      .get("/administrativeactivities/getactivities")
+      .then((res) => setAdministrative(res.data));
   }, []);
 
   useEffect(() => {
-    api.get("/awards/GetAwards")
-      .then((res) => setAwards(res.data.data || []))
-      .catch(() => setAwards([]));
+    api.get("/awards/GetAwards").then((res) => setAwards(res.data));
   }, []);
 
   useEffect(() => {
-    api.get("/academicCareer/GetAcademicCareers")
-      .then((res) => setAcademic(res.data.data || []))
-      .catch(() => setAcademic([]));
+    api
+      .get("/academicCareer/GetAcademicCareers")
+      .then((res) => setAcademic(res.data));
   }, []);
 
   useEffect(() => {
-    api.get("/otherActivities/getallactivities")
-      .then((res) => setOtherActivities(res.data.data || []))
-      .catch(() => setOtherActivities([]));
+    api
+      .get("/otherActivities/getallactivities")
+      .then((res) => setOtherActivities(res.data));
   }, []);
 
   // CARD COMPONENT
@@ -75,74 +73,82 @@ export default function Info() {
       transition={{ duration: 0.6 }}
       className="w-full flex flex-col gap-12 py-6"
     >
-      {/* ADMINISTRATIVE */}
+      {/* -------------------------------------------
+        ADMINISTRATIVE POSITIONS
+      ------------------------------------------- */}
       <Section title="Administrative Positions / Activities">
-        {Array.isArray(administrative) &&
-          administrative.map((item) => (
-            <Card
-              key={item.administrative_id}
-              icon={<Briefcase className="w-6 h-6 text-yellow-600" />}
-              title={item.title}
-              organisation={item.organisation}
-              duration={item.duration}
-              description={item.description}
-            />
-          ))}
+        {administrative.map((item) => (
+          <Card
+            key={item.administrative_id}
+            icon={<Briefcase className="w-6 h-6 text-yellow-600" />}
+            title={item.title}
+            organisation={item.organisation}
+            duration={item.duration}
+            description={item.description}
+          />
+        ))}
       </Section>
 
-      {/* AWARDS */}
+      {/* -------------------------------------------
+        AWARDS / HONORS
+      ------------------------------------------- */}
       <Section title="Awards / Honors">
-        {Array.isArray(awards) &&
-          awards.map((item) => (
-            <Card
-              key={item.award_id}
-              icon={<Award className="w-6 h-6 text-yellow-600" />}
-              title={item.title}
-              organisation={item.organisation}
-              duration={item.duration}
-            />
-          ))}
+        {awards.map((item) => (
+          <Card
+            key={item.award_id}
+            icon={<Award className="w-6 h-6 text-yellow-600" />}
+            title={item.title}
+            department={item.department}
+            duration={item.duration}
+            organisation={item.organisation}
+          />
+        ))}
       </Section>
 
-      {/* ACADEMIC */}
+      {/* -------------------------------------------
+        ACADEMIC CAREER / MEMBER
+      ------------------------------------------- */}
       <Section title="Academic Career / Member">
-        {Array.isArray(academic) &&
-          academic.map((item) => (
-            <Card
-              key={item.academic_id}
-              icon={<GraduationCap className="w-6 h-6 text-yellow-600" />}
-              title={item.title}
-              organisation={item.organisation}
-              duration={item.duration}
-              description={item.role}
-            />
-          ))}
+        {academic.map((item) => (
+          <Card
+            key={item.academic_id}
+            icon={<GraduationCap className="w-6 h-6 text-yellow-600" />}
+            title={item.title}
+            organisation={item.organisation}
+            duration={item.duration}
+            description={item.role}
+          />
+        ))}
       </Section>
 
-      {/* OTHER ACTIVITIES */}
+      {/* -------------------------------------------
+        OTHER PROFESSIONAL ACTIVITIES
+      ------------------------------------------- */}
       <Section title="Other Professional Activities">
-        {Array.isArray(otherActivities) &&
-          otherActivities.map((item) => (
-            <Card
-              key={item.activity_id}
-              icon={<ScrollText className="w-6 h-6 text-yellow-600" />}
-              title={item.title}
-              organisation={item.organisation}
-              duration={item.duration}
-              description={item.description}
-            />
-          ))}
+        {otherActivities.map((item) => (
+          <Card
+            key={item.activity_id}
+            icon={<ScrollText className="w-6 h-6 text-yellow-600" />}
+            title={item.title}
+            organisation={item.organisation}
+            duration={item.duration}
+            description={item.description}
+          />
+        ))}
       </Section>
     </motion.div>
   );
 }
 
+// -------------------------------------------
 // SECTION COMPONENT
+// -------------------------------------------
 const Section = ({ title, children }) => (
   <div className="w-full flex flex-col gap-4 px-4">
     <h1 className="text-3xl font-semibold text-blue-600 drop-shadow-sm">
       {title}
     </h1>
+
     <div className="flex flex-wrap gap-6 justify-evenly">{children}</div>
   </div>
 );
